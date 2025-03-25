@@ -35,80 +35,98 @@ STEP 8: Use heatmap method of representation to show relationships between two v
        df=pd.read_csv("/content/titanic_dataset.csv")
        df
        ```
-       ![{F45433A9-AA76-40CB-B683-47DF461CF9AD}](https://github.com/user-attachments/assets/6afd80cb-1871-4a29-ad3c-351cdda728f3)
+       ![Screenshot 2025-03-25 104957](https://github.com/user-attachments/assets/edd89df3-d98c-43d7-82df-c87ec52de8ba)
+
        ```
        df.info()
        ```
-       ![{F5B07D21-F3D7-452E-9A8D-8FCC38C2284C}](https://github.com/user-attachments/assets/d460ffee-40a5-4698-aee0-cb346dc7257d)
+       ![Screenshot 2025-03-25 105036](https://github.com/user-attachments/assets/dbd0dcaf-8679-4576-ad96-c1611387312e)
+
        ```
        df.shape
        ```
-       ![{236811E4-504D-405F-9E57-B91CEB8ABAED}](https://github.com/user-attachments/assets/4ac7fd20-a2d2-4fbc-84d9-ab5fce43bd96)
+       ![Screenshot 2025-03-25 105111](https://github.com/user-attachments/assets/c6ccb0e4-a564-484b-b9df-4999528d81cd)
+
        ```
        df.describe()
        ```
-       ![{247822CF-D4E6-4EAF-A2D2-C06508677664}](https://github.com/user-attachments/assets/f472ce53-187c-437c-9fbe-7e7e1719b7eb)
+       ![Screenshot 2025-03-25 105147](https://github.com/user-attachments/assets/34b5f325-ba72-4263-a905-9e1a7d5a9570)
+
        ```
        df.nunique()
        ```
-       ![{47610618-B827-4B92-A522-6E81A09834E3}](https://github.com/user-attachments/assets/74a2f927-8b5f-4971-a07f-64beb0239767)
+       ![Screenshot 2025-03-25 105226](https://github.com/user-attachments/assets/ce08fbd4-685d-490a-8afb-c8e159a4e1b1)
+
        ```
        df["Survived"].value_counts()
        ```
-       ![{F159C3D1-6FFA-4FA8-9BFE-3ECB1DEF422D}](https://github.com/user-attachments/assets/09635075-1b26-4ed8-a909-794c756607a7)
+      ![Screenshot 2025-03-25 105304](https://github.com/user-attachments/assets/cb53fc45-b032-4ec7-920d-170413c06c52)
+
        ```
        per=(df["Survived"].value_counts()/df.shape[0]*100).round(2)
        per
        ```
-       ![{DA26726F-EDF0-47F7-9AA2-68D8ABB6CD5C}](https://github.com/user-attachments/assets/f83f3d81-3656-486e-a21f-dc1ec1f3e15e)
+       ![Screenshot 2025-03-25 105342](https://github.com/user-attachments/assets/059be892-6af1-4353-afd6-8a33e9754cb5)
+
        ```
        sns.countplot(data=df,x="Survived")
        ```
-       ![{59DF17DE-E7D4-4C2E-830D-A986D39CB683}](https://github.com/user-attachments/assets/23bb0966-41c3-4a54-b954-9b93385a68e2)
+       ![Screenshot 2025-03-25 105415](https://github.com/user-attachments/assets/c403354f-329b-4c36-97eb-ea4a9b9ebdfa)
+
        ```
        df.Pclass.unique()
        ```
-       ![{BF820408-D514-4418-9EA0-FEF3AFB95884}](https://github.com/user-attachments/assets/313fa398-636e-49e5-b0e4-5be8562bd787)
+      ![Screenshot 2025-03-25 105447](https://github.com/user-attachments/assets/1f1e7299-477f-490d-906a-2d3eeef5b4d6)
+
        ```
        df.rename(columns={'Sex':'Gender'},inplace=True)
        df
        ```
-       ![{80B9EA4D-3BBE-40EE-84BC-BFE273C268DB}](https://github.com/user-attachments/assets/bfdb3923-c1df-44d4-b8ff-2393d8135f09)
+       ![Screenshot 2025-03-25 105536](https://github.com/user-attachments/assets/68bd9e01-7b07-4638-bafe-ab788bc9dd93)
+
        ```
        sns.catplot(x="Gender",col="Survived",kind="count",data=df,height=5,aspect=.7)
        ```
-       ![{59029811-F31D-4C2A-AB4A-A516DAF5CB8E}](https://github.com/user-attachments/assets/4cf370a8-c362-458a-92e5-84de04ab891e)
+       ![Screenshot 2025-03-25 105623](https://github.com/user-attachments/assets/ff52ea70-640e-4e92-9069-62bc1a01626b)
+
        ```
        sns.catplot(x="Survived",hue="Gender",data=df,kind="count")
        ```
-       ![{CE93E61B-501D-440C-91BB-3BA001435694}](https://github.com/user-attachments/assets/b32c6252-46a4-4d9c-a9a7-8b2cbd754910)
+       ![Screenshot 2025-03-25 105705](https://github.com/user-attachments/assets/5ed189a4-4064-4e77-a6db-00c605c5c45e)
+
        ```
        df.boxplot(column="Age",by="Survived")
        ```
-       ![{12CD1C70-A244-4DB5-9E2B-D0EA5958C148}](https://github.com/user-attachments/assets/72e9d276-d173-4a9d-95f4-f540a6ef9df6)
+       ![Screenshot 2025-03-25 105733](https://github.com/user-attachments/assets/558d8fcc-0458-408a-935e-e714cfcef97a)
+
        ```
        sns.scatterplot(x=df["Age"],y=df["Fare"])
        ```
-       ![{E4713A0E-0CE2-423F-8227-DF0F5862C9CD}](https://github.com/user-attachments/assets/8abf2b47-f7d3-4a08-96c0-5ad6c5428f92)
+       ![Screenshot 2025-03-25 105801](https://github.com/user-attachments/assets/99ef06c7-400e-4863-a0d2-7212d2327148)
+
        ```
        sns.jointplot(x="Age",y="Fare",data=df)
        ```
-       ![{67B41037-5C48-4C6C-90E1-9FD456CD4F29}](https://github.com/user-attachments/assets/664c99d9-49fc-4a6d-a5ad-90906e7d77e9)
+      ![Screenshot 2025-03-25 105828](https://github.com/user-attachments/assets/bba2f5ea-20ad-41f1-955e-f77879f9c1d6)
+
        ```
        fig, ax1 = plt.subplots(figsize=(8,5))
        plt = sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=df)
        ```
-       ![{742D9F6E-095B-4689-8285-7FEF1D0BAFA6}](https://github.com/user-attachments/assets/630f4961-b7ce-4195-bd8e-ba1addd600e0)
+      ![Screenshot 2025-03-25 105913](https://github.com/user-attachments/assets/9fe20381-8845-495a-9af5-511ce271efad)
+
        ```
        numerical_features = df.select_dtypes(include=['number'])
        corr = numerical_features.corr()
        sns.heatmap(corr, annot=True)
        ```
-       ![{D81DCEA8-D6FD-4351-9E91-4BBCB9CC1B6B}](https://github.com/user-attachments/assets/11c0fe4c-1380-4a6e-b2a5-d409073c1ac0)
+      ![Screenshot 2025-03-25 105952](https://github.com/user-attachments/assets/beb85067-b97b-4029-8077-061a5a8eff4a)
+
        ```
        sns.pairplot(df)
        ```
-       ![{9A4A15FF-7A39-4347-AD3A-9FFA28D9D7F8}](https://github.com/user-attachments/assets/131987fc-1de1-40c7-bbc1-dc0dd3470b22)
+      ![Screenshot 2025-03-25 110138](https://github.com/user-attachments/assets/3c017d2e-54d2-468d-b08e-0f99c0977339)
+
        
 
 # RESULT
